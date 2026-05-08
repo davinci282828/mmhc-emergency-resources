@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emergency Mental Health Resources | Manhattan Mental Health Counseling</title>
+  <meta name="description" content="If you need help now, find 24/7 crisis resources including 988, Crisis Text Line, NYC 988, domestic violence, child safety, sexual assault, and substance use support.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@300;400;500;700&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ═══════════════════════════════════════════════
+       MMHC Emergency Resources — Design System
+       Matches manhattanmentalhealthcounseling.com
+       ═══════════════════════════════════════════════ */
+
+    :root {
+      /* Brand Greens */
+      --mmhc-deep:       #0a5a38;
+      --mmhc-dark:       #1e4129;
+      --mmhc-darkest:    #002516;
+      --mmhc-mid:        #46624e;
+      --mmhc-sage:       #98b8a4;
+      --mmhc-light:      #d1dfda;
+      --mmhc-pale:       #e3f2e9;
+      --mmhc-palest:     #effaf3;
+      --mmhc-accent:     #7bad37;
+      --mmhc-mint:       #A1E681;
+
+      /* Neutrals */
+      --text-primary:    #121212;
+      --text-secondary:  #2B2B2B;
+      --text-muted:      #6a727c;
+      --bg-white:        #ffffff;
+      --border-light:    #d1dfda;
+
+      /* Crisis-specific */
+      --crisis-red:      #c0392b;
+      --crisis-red-bg:   #fdf2f0;
+      --crisis-red-border: #e74c3c;
+
+      /* Typography */
+      --font-heading:    'Bitter', serif;
+      --font-body:       'Archivo', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text-primary);
+      line-height: 1.65;
+      background: var(--bg-white);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── Hero ─────────────────────────────────── */
+    .er-hero {
+      background: linear-gradient(135deg, var(--mmhc-darkest) 0%, var(--mmhc-deep) 50%, var(--mmhc-dark) 100%);
+      color: white;
+      padding: 4rem 1.5rem 3rem;
+      text-align: center;
+    }
+    .er-hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .er-hero .hero-subtitle {
+      font-size: 1.125rem;
+      opacity: 0.92;
+      max-width: 640px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.6;
+    }
+    .er-hero .hero-disclaimer {
+      font-size: 0.875rem;
+      opacity: 0.75;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.55;
+    }
+
+    /* ─── Container ────────────────────────────── */
+    .er-container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* ─── Section Labels ───────────────────────── */
+    .er-section-label {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--mmhc-deep);
+      margin: 3rem 0 0.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 3px solid var(--mmhc-accent);
+      display: inline-block;
+    }
+    .er-section-note {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+
+    /* ─── Crisis Cards ─────────────────────────── */
+    .er-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 1.75rem;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 2px 8px rgba(10, 90, 56, 0.06);
+      transition: box-shadow 0.2s ease;
+    }
+    .er-card:hover {
+      box-shadow: 0 4px 16px rgba(10, 90, 56, 0.1);
+    }
+
+    /* Emergency 911 card */
+    .er-card--emergency {
+      background: var(--crisis-red-bg);
+      border: 2px solid var(--crisis-red-border);
+      border-left: 6px solid var(--crisis-red);
+    }
+    .er-card--emergency .er-card__title {
+      color: var(--crisis-red);
+    }
+
+    .er-card__badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.2em 0.65em;
+      border-radius: 4px;
+      margin-bottom: 0.75rem;
+      background: var(--mmhc-pale);
+      color: var(--mmhc-deep);
+    }
+    .er-card--emergency .er-card__badge {
+      background: var(--crisis-red);
+      color: white;
+    }
+
+    .er-card__title {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--mmhc-dark);
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+
+    .er-card__org {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 0.6rem;
+    }
+
+    .er-card__desc {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .er-card__note {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    /* ─── Action Buttons ───────────────────────── */
+    .er-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .er-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.25rem;
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
+      line-height: 1.3;
+    }
+
+    .er-btn--call {
+      background: var(--mmhc-deep);
+      color: white;
+    }
+    .er-btn--call:hover {
+      background: var(--mmhc-darkest);
+    }
+
+    .er-btn--text {
+      background: var(--mmhc-pale);
+      color: var(--mmhc-deep);
+      border: 1px solid var(--mmhc-sage);
+    }
+    .er-btn--text:hover {
+      background: var(--mmhc-light);
+    }
+
+    .er-btn--chat {
+      background: transparent;
+      color: var(--mmhc-deep);
+      border: 1px solid var(--mmhc-deep);
+    }
+    .er-btn--chat:hover {
+      background: var(--mmhc-palest);
+    }
+
+    .er-btn--emergency {
+      background: var(--crisis-red);
+      color: white;
+      font-size: 1.05rem;
+      padding: 0.85rem 2rem;
+    }
+    .er-btn--emergency:hover {
+      background: #a93226;
+    }
+
+    .er-btn--cta {
+      background: var(--mmhc-accent);
+      color: white;
+    }
+    .er-btn--cta:hover {
+      background: #6a9a2e;
+    }
+
+    .er-btn__icon {
+      font-size: 1.1em;
+      flex-shrink: 0;
+    }
+
+    /* ─── Non-Crisis Section ───────────────────── */
+    .er-noncris {
+      background: var(--mmhc-palest);
+      border-radius: 12px;
+      padding: 2rem 1.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .er-noncris__title {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--mmhc-dark);
+      margin-bottom: 0.4rem;
+    }
+    .er-noncris__desc {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    /* ─── Therapy CTA ──────────────────────────── */
+    .er-therapy-cta {
+      background: linear-gradient(135deg, var(--mmhc-darkest), var(--mmhc-deep));
+      color: white;
+      border-radius: 12px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      margin: 2.5rem 0;
+    }
+    .er-therapy-cta h2 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    .er-therapy-cta p {
+      opacity: 0.88;
+      margin-bottom: 1.25rem;
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .er-therapy-cta .er-btn--cta {
+      font-size: 1rem;
+      padding: 0.85rem 2rem;
+    }
+
+    /* ─── Safety Warning Bar ───────────────────── */
+    .er-safety-note {
+      background: #fef9e7;
+      border: 1px solid #f0e1a1;
+      border-radius: 8px;
+      padding: 0.85rem 1.25rem;
+      font-size: 0.85rem;
+      color: #7d6608;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+    .er-safety-note strong {
+      color: #5a4a06;
+    }
+
+    /* ─── Footer About ─────────────────────────── */
+    .er-about {
+      text-align: center;
+      padding: 2rem 1rem;
+      border-top: 1px solid var(--border-light);
+      margin-top: 2rem;
+    }
+    .er-about p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto 0.5rem;
+    }
+    .er-about .er-reviewed {
+      font-size: 0.8rem;
+      color: var(--mmhc-sage);
+    }
+
+    /* ─── Divider ──────────────────────────────── */
+    .er-divider {
+      border: none;
+      height: 1px;
+      background: var(--border-light);
+      margin: 2rem 0;
+    }
+
+    /* ─── Mobile ───────────────────────────────── */
+    @media (max-width: 600px) {
+      .er-hero { padding: 3rem 1.25rem 2.25rem; }
+      .er-card { padding: 1.25rem; }
+      .er-actions { flex-direction: column; }
+      .er-btn { justify-content: center; width: 100%; padding: 0.85rem 1rem; }
+      .er-section-label { font-size: 1.3rem; }
+      .er-therapy-cta { padding: 2rem 1.25rem; }
+      .er-noncris { padding: 1.5rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="er-hero">
+    <h1>If You Need Help Right Now</h1>
+    <p class="hero-subtitle">If you or someone else may be in immediate danger, call 911 now.</p>
+    <p class="hero-disclaimer">This page lists crisis and emergency resources available 24/7. Manhattan Mental Health Counseling is not a crisis service. We cannot provide immediate emergency support through our website, contact form, office phone line, voicemail, email, client portal, or therapist matching process.</p>
+  </section>
+
+  <div class="er-container">
+
+    <!-- 911 EMERGENCY -->
+    <div style="margin-top: 2rem;">
+      <div class="er-card er-card--emergency">
+        <span class="er-card__badge">Immediate Danger</span>
+        <h3 class="er-card__title">Call 911</h3>
+        <p class="er-card__desc">Use this if someone is in immediate danger, may seriously harm themselves or someone else, needs urgent medical help, or needs police, fire, or EMS response.</p>
+        <div class="er-actions">
+          <a href="tel:911" class="er-btn er-btn--emergency"><span class="er-btn__icon">📞</span> Call 911</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 24/7 CRISIS RESOURCES -->
+    <h2 class="er-section-label">24/7 Crisis Resources</h2>
+    <p class="er-section-note">Free, confidential support available anytime — day or night.</p>
+
+    <!-- 988 -->
+    <div class="er-card">
+      <span class="er-card__badge">24/7 · Free · Confidential</span>
+      <h3 class="er-card__title">Suicide, Self-Harm, Emotional Crisis, or Substance-Use Crisis</h3>
+      <p class="er-card__org">988 Suicide &amp; Crisis Lifeline</p>
+      <p class="er-card__desc">You do not have to be suicidal to contact 988. Use it for suicidal thoughts, emotional distress, substance use concerns, relationship distress, loneliness, depression, anxiety, or concern about someone else.</p>
+      <div class="er-actions">
+        <a href="tel:988" class="er-btn er-btn--call"><span class="er-btn__icon">📞</span> Call 988</a>
+        <a href="sms:988" class="er-btn er-btn--text"><span class="er-btn__icon">💬</span> Text 988</a>
+        <a href="https://chat.988lifeline.org/" class="er-btn er-btn--chat" target="_blank" rel="noopener"><span class="er-btn__icon">🖥️</span> Chat with 988</a>
+      </div>
+    </div>
+
+    <!-- Crisis Text Line -->
+    <div class="er-card">
+      <span class="er-card__badge">24/7 · Free · Confidential</span>
+      <h3 class="er-card__title">Text-Based Crisis Support</h3>
+      <p class="er-card__org">Crisis Text Line</p>
+      <p class="er-card__desc">Available 24/7, free and confidential in the United States. This can be helpful if talking by phone feels too difficult or unsafe.</p>
+      <div class="er-actions">
+        <a href="sms:741741?body=HOME" class="er-btn er-btn--text"><span class="er-btn__icon">💬</span> Text HOME to 741741</a>
+      </div>
+    </div>
+
+    <!-- NYC 988 / NYC Well -->
+    <div class="er-card">
+      <span class="er-card__badge">NYC · 24/7 · 200+ Languages</span>
+      <h3 class="er-card__title">NYC-Based Mental Health Crisis Support</h3>
+      <p class="er-card__org">NYC 988 / NYC Well</p>
+      <p class="er-card__desc">Free, confidential mental health and substance use support, 24/7/365, in more than 200 languages.</p>
+      <div class="er-actions">
+        <a href="tel:988" class="er-btn er-btn--call"><span class="er-btn__icon">📞</span> Call 988</a>
+        <a href="tel:18886929355" class="er-btn er-btn--call"><span class="er-btn__icon">📞</span> Call NYC Well</a>
+        <a href="sms:65173?body=WELL" class="er-btn er-btn--text"><span class="er-btn__icon">💬</span> Text WELL to 65173</a>
+      </div>
+    </div>
+
+    <!-- NYC Mobile Crisis Teams -->
+    <div class="er-card">
+      <span class="er-card__badge">NYC Only</span>
+      <h3 class="er-card__title">NYC Mobile Crisis Teams</h3>
+      <p class="er-card__desc">If someone in NYC is experiencing a serious behavioral health crisis but does not appear to need immediate hospitalization, you can request a Mobile Crisis Team by calling 988. They may provide assessment, crisis intervention, supportive counseling, follow-up support, and referrals.</p>
+      <p class="er-card__note">If there is immediate danger or urgent medical risk, call 911 instead.</p>
+      <div class="er-actions">
+        <a href="tel:988" class="er-btn er-btn--call"><span class="er-btn__icon">📞</span> Call 988</a>
+      </div>
+    </div>
+
+    <!-- Domestic Violence -->
+    <div class="er-card">
+      <span class="er-card__badge">24/7 · Free · Confidential</span>
+      <h3 class="er-card__title">Domestic Violence or Relationship Abuse</h3>
+      <p class="er-card__org">National Domestic Violence Hotline</p>
+      <p class="er-card__desc">Confidential support and resources for domestic violence victims. If you are in immediate danger, call 911.</p>
+      <div class="er-safety-note">
+        <strong>Safety note:</strong> If your device, browser, or internet activity may be monitored, use a safer device if possible and consider clearing your browsing history.
+      </div>
+      <div class="er-actions">
+        <a href="tel:18007997233" class="er-btn er-btn--call"><span class="er-btn__icon">📞</span> Call 1-800-799-SAFE</a>
+        <a href="sms:88788?body=START" class="er-btn er-btn--text"><span class="er-btn__icon">💬</span> Text START to 88788</a>
+      </div>
+    </div>
+
+    <!-- RAINN / Sexual Assault -->
+    <div class="er-card">
+      <span class="er-card__badge">24/7 · Free · Confidential</span>
+      <h3 class="er-card__title">Sexual Assault Support</h3>
+      <p class="er-card__org">RAINN National Sexual Assault Hotline</p>
+      <p class="er-card__desc">Confidential support and information for sexual assault survivors. Available 24/7, free and confidential.</p>
+      <div class="er-actions">
+        <a href="tel:18006564673" class="er-btn er-btn--call"><span class="er-btn__icon">📞</span> Call 800-656-HOPE</a>
+        <a href="sms:64673?body=HOPE" class="er-btn er-btn--text"><span class="er-btn__icon">💬</span> Text HOPE to 64673</a>
+      </div>
+    </div>
+
+    <!-- LGBTQ+ Youth -->
+    <div class="er-card">
+      <span class="er-card__badge">24/7 · Free · Confidential</span>
+      <h3 class="er-card__title">LGBTQ+ Youth Crisis Support</h3>
+      <p class="er-card__org">The Trevor Project</p>
+      <p class="er-card__desc">Crisis intervention and suicide prevention for LGBTQ+ young people. Call, text, or chat with a crisis counselor. Available 24/7/365.</p>
+      <div class="er-actions">
+        <a href="https://www.thetrevorproject.org/get-help/" class="er-btn er-btn--call" target="_blank" rel="noopener"><span class="er-btn__icon">🤝</span> Contact The Trevor Project</a>
+      </div>
+    </div>
+
+    <!-- Child Safety -->
+    <div class="er-card">
+      <span class="er-card__badge">24/7 · Child Safety</span>
+      <h3 class="er-card__title">Child Safety</h3>
+      <p class="er-card__org">Childhelp National Child Abuse Hotline</p>
+      <p class="er-card__desc">If a child is in immediate danger, call 911. For reporting or support, the Childhelp hotline is available 24/7/365 by call, text, or chat.</p>
+      <div class="er-actions">
+        <a href="tel:18004224453" class="er-btn er-btn--call"><span class="er-btn__icon">📞</span> Call 1-800-422-4453</a>
+      </div>
+      <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-light);">
+        <p class="er-card__org" style="margin-bottom: 0.4rem;">Report Suspected Child Abuse in NYC / New York State</p>
+        <p class="er-card__desc" style="font-size: 0.88rem; margin-bottom: 0.75rem;"><strong>General public:</strong> Call 311 in NYC, or call the NY State Central Register at 1-800-342-3720.<br><strong>Mandated reporters:</strong> Call 311 in NYC, or call 1-800-635-1522.</p>
+        <div class="er-actions">
+          <a href="tel:311" class="er-btn er-btn--text"><span class="er-btn__icon">📞</span> Call 311</a>
+          <a href="tel:18003423720" class="er-btn er-btn--text"><span class="er-btn__icon">📞</span> NY State Central Register</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Veterans -->
+    <div class="er-card">
+      <span class="er-card__badge">24/7 · Free · Confidential</span>
+      <h3 class="er-card__title">Veterans, Service Members, and Loved Ones</h3>
+      <p class="er-card__org">Veterans Crisis Line</p>
+      <p class="er-card__desc">Confidential support for veterans, service members, National Guard and Reserve members, and people who support them. Available 24/7.</p>
+      <div class="er-actions">
+        <a href="tel:988" class="er-btn er-btn--call"><span class="er-btn__icon">📞</span> Call 988, Press 1</a>
+        <a href="sms:838255" class="er-btn er-btn--text"><span class="er-btn__icon">💬</span> Text 838255</a>
+      </div>
+    </div>
+
+    <!-- SAMHSA -->
+    <div class="er-card">
+      <span class="er-card__badge">24/7 · English &amp; Spanish</span>
+      <h3 class="er-card__title">Substance Use or Treatment Referral</h3>
+      <p class="er-card__org">SAMHSA National Helpline</p>
+      <p class="er-card__desc">Free, confidential treatment referrals, information, and connection to local treatment facilities, support groups, and community-based organizations. Available 24/7/365 in English and Spanish.</p>
+      <p class="er-card__note">If someone is in immediate danger, call 911. If someone may harm themselves, call or text 988.</p>
+      <div class="er-actions">
+        <a href="tel:18006624357" class="er-btn er-btn--call"><span class="er-btn__icon">📞</span> Call 1-800-662-HELP</a>
+      </div>
+    </div>
+
+    <hr class="er-divider">
+
+    <!-- NOT IN CRISIS CTA -->
+    <div class="er-therapy-cta">
+      <h2>Not in Crisis? Start Therapy</h2>
+      <p>If you are not in immediate danger and would like to start therapy, Manhattan Mental Health Counseling provides online therapy across New York State. Our team responds during business hours.</p>
+      <p style="font-size: 0.82rem; opacity: 0.7; margin-bottom: 1.25rem;">Do not use our contact form, voicemail, email, client portal, or scheduling process for emergencies or any situation where someone may be in immediate danger.</p>
+      <a href="https://manhattanmentalhealthcounseling.com/contact/" class="er-btn er-btn--cta"><span class="er-btn__icon">→</span> Contact Us for Non-Urgent Therapy</a>
+    </div>
+
+    <!-- NON-CRISIS RESOURCES -->
+    <h2 class="er-section-label">Non-Crisis Resources</h2>
+    <p class="er-section-note">The resources below are not for emergencies and may not be available 24/7. If someone may be in immediate danger, call 911. If someone needs urgent emotional support, call or text 988.</p>
+
+    <div class="er-noncris">
+      <h3 class="er-noncris__title">Therapy &amp; Referral Options</h3>
+      <p class="er-noncris__desc">Outpatient therapy, specialty referral directories, and professional treatment matching services.</p>
+    </div>
+    <div class="er-noncris">
+      <h3 class="er-noncris__title">Support Groups &amp; Community-Based Care</h3>
+      <p class="er-noncris__desc">LGBTQ+ peer and family support, addiction recovery groups, youth and family resources, and other community-based supports.</p>
+    </div>
+    <div class="er-noncris">
+      <h3 class="er-noncris__title">Legal, Financial &amp; Housing Assistance</h3>
+      <p class="er-noncris__desc">Housing legal help, emergency rent or utility assistance, social-service locators, nutrition support, and other practical resources.</p>
+    </div>
+    <div class="er-noncris">
+      <h3 class="er-noncris__title">Self-Care Apps</h3>
+      <p class="er-noncris__desc">Self-care, mindfulness, mood tracking, habit-building, and meditation apps — non-crisis tools only.</p>
+    </div>
+    <div class="er-noncris">
+      <h3 class="er-noncris__title">Education Materials</h3>
+      <p class="er-noncris__desc">Worksheets, psychoeducation, DBT resources, anxiety coping materials, and domestic violence education — non-crisis educational resources.</p>
+    </div>
+
+    <!-- ABOUT / FOOTER -->
+    <div class="er-about">
+      <p><strong>Manhattan Mental Health Counseling</strong> provides online therapy across New York State. We are not a crisis hotline, emergency service, hospital, mobile crisis team, or 24/7 response service.</p>
+      <p>If you need immediate help, use the crisis resources above.</p>
+      <p class="er-reviewed">Reviewed by Natalie Buchwald, LMHC-D, Founding Clinical Chair · Last reviewed: May 8, 2026</p>
+    </div>
+
+  </div>
+
+  <!-- 
+    DEVELOPER NOTES FOR SAL:
+    
+    SUPPRESS ON THIS PAGE:
+    - "Start Therapy Now" CTA above crisis content
+    - Chatbot widget
+    - Newsletter popup
+    - Scheduling CTA above crisis resources
+    - Lead capture above crisis resources
+    - Any animated modal that can delay access to phone numbers
+
+    SEO:
+    - Primary URL: /emergency-resources/
+    - Redirect: /resources/ → /emergency-resources/
+    - SEO title: Emergency Mental Health Resources | Manhattan Mental Health Counseling
+    - Meta description: If you need help now, find 24/7 crisis resources including 988, Crisis Text Line, NYC 988, domestic violence, child safety, sexual assault, and substance use support.
+    - Focus keyword: emergency mental health resources
+    - Secondary: crisis resources NYC, 988 crisis lifeline, mental health crisis hotline, suicide crisis support, NYC 988
+
+    LINK MAP:
+    911 phone: tel:911
+    988 phone: tel:988
+    988 text: sms:988
+    988 chat: https://chat.988lifeline.org/
+    Crisis Text Line: sms:741741?body=HOME
+    NYC Well phone: tel:18886929355
+    NYC Well text: sms:65173?body=WELL
+    DV Hotline phone: tel:18007997233
+    DV Hotline text: sms:88788?body=START
+    RAINN phone: tel:18006564673
+    RAINN text: sms:64673?body=HOPE
+    Trevor Project: https://www.thetrevorproject.org/get-help/
+    Childhelp: tel:18004224453
+    Veterans Crisis phone: tel:988
+    Veterans Crisis text: sms:838255
+    SAMHSA: tel:18006624357
+  -->
+
+</body>
+</html>
